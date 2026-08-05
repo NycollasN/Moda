@@ -1,0 +1,1752 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monisy Kaillany | Mídia Kit & Parcerias</title>
+  
+  <meta name="description" content="Mídia Kit Oficial de Monisy Kaillany. Influenciadora digital focada em conexão autêntica, engajamento real e geração de resultados para marcas parceiras.">
+  <meta name="keywords" content="Monisy Kaillany, Mídia Kit, Influenciadora Digital, Parcerias, Recife, Provador, Divulgação, Instagram">
+  <meta name="author" content="Monisy Kaillany">
+  <meta name="robots" content="index, follow">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+:root {
+  --primary-brown: #8C624E;
+  --dark-brown: #5C3E31;
+  --light-brown: #C4A484;
+  --bg-light: #FAF5F0;
+  --accent-pink: #E8A0BF;
+  --soft-pink: #F8D7E3;
+  --text-color: #3D2E28;
+  --white: #FFFFFF;
+  --font-statement: 'Cinzel Decorative', serif;
+  --font-title: 'Playfair Display', serif;
+  --font-body: 'Montserrat', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-light);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* HEADER FIXO RESPONSIVO */
+/* 1. RESET E CORREÇÃO DO ESPAÇO NO TOPO */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0 !important;
+  padding: 0 !important; /* Remove totalmente a folga superior */
+  width: 100%;
+  overflow-x: hidden; /* Corta qualquer rolagem lateral indesejada */
+}
+
+/* 2. REGRA DE RESPONSIVIDADE PARA IMAGENS E SEÇÕES */
+img, picture, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 3. CORREÇÃO DO HEADER FIXO */
+header.fixed-header {
+  background-color: var(--dark-brown);
+  color: var(--white);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(61, 46, 40, 0.2);
+}
+
+.navbar {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.2rem;
+}
+
+.logo {
+  font-family: var(--font-statement);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--soft-pink);
+  text-decoration: none;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--soft-pink);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+/* 4. MENU MOBILE E AJUSTE DE TELA PEQUENA */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* Mostra o ícone no celular */
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--dark-brown);
+    flex-direction: column;
+    padding: 1.5rem 0;
+    gap: 1rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+  
+  /* Garante que o banner do topo ocupe a largura certa */
+  .animate-on-scroll, #casal, section {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* HERO SLIDER */
+.hero-slider-container {
+  margin-top: 65px;
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out, transform 8s ease;
+  background-size: cover;
+  background-position: center top;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1);
+}
+
+.slide.active {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(61, 46, 40, 0.55), rgba(92, 62, 49, 0.65));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+.hero-content h1 {
+  font-family: var(--font-statement);
+  font-size: 2.8rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+  background: rgba(61, 46, 40, 0.5);
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(232, 160, 191, 0.3);
+  backdrop-filter: blur(4px);
+}
+
+.hero-content p {
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+  color: #FFF;
+  font-weight: 600;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-buttons {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important; /* Proíbe quebrar linha */
+  gap: 12px !important;
+  margin-top: 1.2rem;
+  width: 100% !important;
+}
+
+.btn-whatsapp,
+.btn-instagram {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  
+  width: 155px !important;       /* Largura fixa compacta */
+  height: 38px !important;      /* Altura alinhada */
+  padding: 0 !important;
+  
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.78rem !important; /* Fonte levemente menor para o tag do instagram caber retinho */
+  white-space: nowrap !important;
+  box-sizing: border-box !important;
+  flex-shrink: 0 !important;    /* Impede que o flexbox esmague os botões */
+  transition: all 0.3s ease;
+}
+
+.btn-whatsapp {
+  background-color: var(--primary-brown);
+  color: var(--white);
+  border: 1px solid var(--soft-pink);
+  box-shadow: 0 4px 10px rgba(92, 62, 49, 0.3);
+}
+
+.btn-whatsapp:hover {
+  background-color: var(--dark-brown);
+  color: var(--soft-pink);
+  transform: translateY(-2px);
+}
+
+.btn-instagram {
+  background-color: transparent;
+  color: var(--white);
+  border: 1.5px solid var(--accent-pink);
+  margin-top: 13px;
+}
+
+.btn-instagram:hover {
+  background-color: var(--accent-pink);
+  color: var(--dark-brown);
+  transform: translateY(-2px);
+}
+/* BOTÕES DE NAVEGAÇÃO DO SLIDER */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(92, 62, 49, 0.6);
+  color: var(--white);
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.8rem 1.2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 3;
+  transition: background 0.3s;
+}
+
+.slider-btn:hover {
+  background: var(--primary-brown);
+}
+
+.slider-btn.prev { left: 20px; }
+.slider-btn.next { right: 20px; }
+
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dot.active {
+  background: var(--soft-pink);
+  width: 28px;
+  border-radius: 10px;
+}
+
+/* SEÇÕES GERAIS */
+section {
+  padding: 4rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: var(--font-statement);
+  text-align: center;
+  font-size: 2rem;
+  color: var(--dark-brown);
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  width: 70px;
+  height: 4px;
+  background-color: var(--primary-brown);
+  display: block;
+  margin: 0.6rem auto 0;
+  border-radius: 2px;
+}
+
+/* SOBRE MIM E PUBLI KIDS (CONTAINER DA FOTO EM PÉ) */
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.about-text {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 12px;
+  border-left: 6px solid var(--primary-brown);
+  box-shadow: 0 4px 15px rgba(92, 62, 49, 0.08);
+}
+
+/* FOTO VERTICAL (EM PÉ) SEM BARRAS E COM ZOOM */
+.publi-img-container {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  height: 520px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(61, 46, 40, 0.25);
+  border: 3px solid var(--white);
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.publi-img-container img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 20% !important;
+  transform: scale(1.15);
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.publi-img-container:hover img {
+  transform: scale(1.22);
+}
+
+.publi-img-container .mosaic-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(92, 62, 49, 0.85);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-align: center;
+  padding: 1.5rem;
+  z-index: 2;
+}
+
+.publi-img-container:hover .mosaic-overlay {
+  opacity: 1;
+}
+
+/* MÉTRICAS */
+#metricas {
+  background-color: #2b211e;
+  padding: 4rem 1.5rem;
+  border-radius: 16px;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+#metricas .section-title {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+#metricas .section-title::after {
+  background-color: #F8D7E3 !important;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.metric-card {
+  background: #F7F3EE;
+  border: 1px solid rgba(196, 164, 132, 0.4);
+  padding: 2.2rem 1.2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 160px;
+}
+
+.metric-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+  border-color: #8C624E;
+}
+
+.metric-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.9rem;
+  color: #5C3E31;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.metric-card p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  color: #8C624E;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+
+
+/* CARDS DE SERVIÇOS E VALORES */
+/* GRID DE SERVIÇOS */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.service-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(92, 62, 49, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(92, 62, 49, 0.2);
+}
+
+/* FIXAÇÃO E CORREÇÃO DO TAMANHO DA IMAGEM DO CARD */
+.service-img-wrapper {
+  width: 100%;
+  height: 220px; /* Limita a altura do topo do card */
+  overflow: hidden;
+  position: relative;
+  background-color: #5C3E31;
+}
+
+.service-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important; /* Corta proporcionalmente sem distorcer */
+  object-position: top center !important;
+  display: block !important;
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-img {
+  transform: scale(1.08);
+}
+
+/* CORPO DO CARD E BOTÃO INTERATIVO */
+.service-body {
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.service-body h3 {
+  font-family: 'Playfair Display', serif;
+  color: #5C3E31;
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.service-body ul {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.service-body ul li {
+  padding: 0.45rem 0;
+  border-bottom: 1px dashed rgba(196, 164, 132, 0.3);
+  font-size: 0.92rem;
+  color: #3D2E28;
+}
+
+.obs-text {
+  color: #777;
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+/* BOTÃO TOTALMENTE INTERATIVO E CLICÁVEL */
+.btn-whatsapp {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #8C624E;
+  color: #FFFFFF !important;
+  padding: 0.85rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid #F8D7E3;
+  box-shadow: 0 4px 12px rgba(92, 62, 49, 0.25);
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+  user-select: none;
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.btn-whatsapp:hover {
+  background-color: #5C3E31 !important;
+  color: #F8D7E3 !important;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 18px rgba(92, 62, 49, 0.4);
+}
+
+.btn-whatsapp:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+/* FORMAS DE PAGAMENTO */
+.payment-methods {
+  margin-top: 3.5rem;
+  text-align: center;
+  background: #FFFFFF;
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(92, 62, 49, 0.08);
+  border: 1px solid rgba(196, 164, 132, 0.3);
+}
+
+.payment-methods h4 {
+  font-family: 'Playfair Display', serif;
+  color: #5C3E31;
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.payment-badges {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.pay-badge {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #5C3E31;
+  background: #FAF5F0;
+  padding: 0.7rem 1.4rem;
+  border-radius: 30px;
+  border: 1px solid #C4A484;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* CHATBOT WIDGET */
+#chat-widget {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 2000;
+}
+
+.chat-btn {
+  background-color: var(--dark-brown);
+  color: var(--soft-pink);
+  border: 2px solid var(--accent-pink);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-btn:hover {
+  transform: scale(1.1);
+}
+
+.chat-box {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  bottom: 75px;
+  right: 0;
+  width: 320px;
+  height: 420px;
+  background-color: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  overflow: hidden;
+  border: 1px solid var(--light-brown);
+}
+
+.chat-header {
+  background-color: var(--dark-brown);
+  color: var(--white);
+  padding: 1rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-logs {
+  flex-grow: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background: var(--bg-light);
+}
+
+.chat-msg {
+  padding: 0.6rem 0.9rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  max-width: 85%;
+}
+
+.chat-msg.bot {
+  background-color: #EAE3DC;
+  color: var(--text-color);
+  align-self: flex-start;
+}
+
+.chat-msg.user {
+  background-color: var(--primary-brown);
+  color: var(--white);
+  align-self: flex-end;
+}
+
+.chat-options {
+  padding: 0.8rem;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  border-top: 1px solid #EEE;
+}
+
+.chat-opt-btn {
+  background: transparent;
+  border: 1px solid var(--primary-brown);
+  color: var(--dark-brown);
+  padding: 0.4rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.chat-opt-btn:hover {
+  background: var(--primary-brown);
+  color: var(--white);
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--dark-brown);
+  color: var(--white);
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--accent-pink);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* SCROLL REVEAL ANIMATION */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVO */
+@media (max-width: 868px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--dark-brown);
+    padding: 1.5rem;
+    gap: 1.2rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+
+  .publi-img-container {
+    height: 450px;
+  }
+}
+
+/* SEÇÃO GRANDES MARCAS */
+#marcas {
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+
+.subtitle-marcas {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--primary-brown);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.brands-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+  max-width: 850px;
+  margin: 2.5rem auto 1.5rem auto;
+}
+
+.brand-item {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: var(--font-body);
+  user-select: none;
+}
+
+.brand-item:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Cores e estilos específicos das bolhas */
+.brand-chikas {
+  background-color: #FFCD00;
+  color: #D9381E;
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+
+.brand-brota {
+  background-color: #006837;
+  color: #FFFFFF;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.brand-brota small, .brand-tutanat small {
+  font-size: 0.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.brand-tutanat {
+  background-color: #000000;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.1;
+}
+
+.brand-tradicao {
+  background-color: #FFCD00;
+  border: 4px solid #000000;
+  color: #000000;
+  position: relative;
+}
+
+.tradicao-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tradicao-inner small {
+  font-size: 0.45rem;
+  font-weight: 800;
+}
+
+.tradicao-inner strong {
+  font-size: 2rem;
+  font-family: serif;
+}
+
+.brand-quero {
+  background-color: #FF8C00;
+  color: #FFFFFF;
+  font-size: 1rem;
+  line-height: 1.1;
+}
+
+.next-brand-call {
+  font-family: var(--font-statement);
+  font-size: 1.3rem;
+  color: var(--dark-brown);
+  margin-top: 2rem;
+  letter-spacing: 1px;
+}
+
+#casal .about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+}
+
+#casal .about-text {
+    flex: 1;
+}
+
+#casal .mosaic-item {
+    width: 380px;
+    max-width: 100%; /* Permite encolher no mobile */
+    height: 430px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,.15);
+    position: relative; /* Necessário para a overlay se usada */
+}
+
+#casal .mosaic-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+#casal .mosaic-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(to top, rgba(0,0,0,.7), transparent);
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+}
+
+#casal .btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    padding: 15px 35px;
+    background: #c99d92;
+    color: #fff;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: .35s;
+    box-shadow: 0 10px 25px rgba(37,211,102,.25);
+}
+
+#casal .btn-whatsapp:hover {
+    transform: translateY(-4px);
+    background: #1fb958;
+    box-shadow: 0 15px 35px rgba(37,211,102,.35);
+}
+
+/* --- REGRAS DE RESPONSIVIDADE (MOBILE & TABLET) --- */
+@media (max-width: 768px) {
+    #casal .about-container {
+        flex-direction: column-reverse; /* Coloca a imagem ou texto empilhados */
+        gap: 30px;
+    }
+
+    #casal .mosaic-item {
+        width: 100%; /* Ocupa toda a largura no celular */
+        height: 350px; /* Reduz altura para ajustar telas menores */
+    }
+
+    #casal .btn-whatsapp {
+        width: 100%; /* Botão ocupa a largura total para toque fácil */
+        text-align: center;
+    }
+}
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@1,400;1,600&family=Montserrat:wght@300;400;600&display=swap');
+
+/* Estilo Geral da Seção */
+.feedback-section {
+  background-color: #1a0f0a; /* Tom marrom escuro do fundo */
+  color: #ffffff;
+  padding: 50px 20px;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Cabeçalho */
+.feedback-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.feedback-title {
+  font-family: 'Bodoni Moda', serif;
+  font-style: italic;
+  font-size: 4rem;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.feedback-subtitle {
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  margin-top: 5px;
+  color: #e0e0e0;
+}
+
+/* Grid de Cards */
+.feedback-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  width: 100%;
+}
+
+.card-full {
+  grid-column: span 2;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Estilo do Card WhatsApp */
+.feedback-card {
+  background-color: #ffffff;
+  background-image: radial-gradient(#ece5dd 1px, transparent 1px);
+  background-size: 15px 15px; /* Simula o padrão sutil do fundo do WhatsApp */
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #111111;
+}
+
+/* Balões de Mensagem */
+.chat-bubble {
+  max-width: 85%;
+  padding: 8px 12px;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  border-radius: 7.5px;
+  position: relative;
+  word-wrap: break-word;
+}
+
+.chat-bubble.received {
+  background-color: #ffffff;
+  align-self: flex-start;
+  border-top-left-radius: 0;
+  box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+}
+
+.chat-bubble.sent {
+  background-color: #e2ffc7;
+  align-self: flex-end;
+  border-top-right-radius: 0;
+  box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+}
+
+.chat-time {
+  float: right;
+  font-size: 0.65rem;
+  color: #888888;
+  margin-left: 8px;
+  margin-top: 4px;
+}
+
+.checks {
+  color: #4fc3f7;
+}
+
+/* Estrelas */
+.stars-rating {
+  margin-top: 40px;
+  font-size: 2.5rem;
+  color: #ffffff;
+  letter-spacing: 12px;
+  text-align: center;
+}
+
+/* Responsividade para Celulares */
+@media (max-width: 768px) {
+  .feedback-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .card-full {
+    grid-column: span 1;
+  }
+  
+  .feedback-title {
+    font-size: 2.8rem;
+  }
+}
+  </style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+  <!-- HEADER FIXO -->
+ <!-- Adicione isso dentro do seu <head> para carregar os ícones do menu -->
+
+<header class="fixed-header">
+  <nav class="navbar">
+    <a href="#" class="logo">Monisy Kaillany</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu" onclick="toggleMenu()">
+      <i class="fas fa-bars" id="menuIcon"></i>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#sobre" onclick="closeMenu()">Sobre</a></li>
+      <li><a href="#metricas" onclick="closeMenu()">Métricas</a></li>
+      <li><a href="#galeria" onclick="closeMenu()">Galeria</a></li>
+      <li><a href="#servicos" onclick="closeMenu()">Valores</a></li>
+      <li><a href="#publikids" onclick="closeMenu()">Publi Kids</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <main>
+    <!-- HERO SLIDER -->
+    <section class="hero-slider-container">
+      <!-- Slide 1 -->
+      <div class="slide active" style="background-image: url('j.jpg');">
+        <div class="slide-overlay"></div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="slide" style="background-image: url('jj.jpg');">
+        <div class="slide-overlay"></div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="slide" style="background-image: url('jjj.jpg');">
+        <div class="slide-overlay"></div>
+      </div>
+
+      <!-- Conteúdo por cima dos slides -->
+      <div class="hero-content">
+        <h1>Monisy Kaillany</h1>
+        <p>Criadora de Conteúdo • Mídia Kit 2025 • Audiência Engajada & Resultados Reais</p>
+        <div class="hero-buttons">
+          <a href="https://wa.me/5581991804782?text=Olá%20Monisy,%20vi%20seu%20site%20e%20gostaria%20de%20fechar%20uma%20parceria!" target="_blank" class="btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+          <a href="https://instagram.com/monisy_kaillany" target="_blank" class="btn-instagram">
+            <i class="fab fa-instagram"></i> @monisy_kaillany
+          </a>
+        </div>
+      </div>
+
+      <!-- Botões de Navegação -->
+      <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+      <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
+
+      <!-- Indicadores (Pontos) -->
+      <div class="slider-dots">
+        <span class="dot active" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+      </div>
+    </section>
+
+    <!-- SOBRE MIM -->
+    <section id="sobre" class="animate-on-scroll">
+      <h2 class="section-title">Sobre mim</h2>
+
+      <div class="about-container">
+        <div class="about-text">
+          <p>
+            Desde 2019, compartilho minha rotina de forma autêntica, verdadeira e
+            sem filtros, criando uma conexão genuína com meu público. Ao longo
+            dessa jornada, construí uma comunidade fiel e engajada, baseada em
+            confiança, credibilidade e propósito.
+          </p>
+
+          <br>
+
+          <p>
+            Mesmo sendo reconhecida no ambiente digital, preservo minha essência e
+            compartilho o propósito de Deus na minha vida. Minha comunidade,
+            carinhosamente chamada de <strong>"ovelhinhas"</strong>, acompanha essa
+            caminhada com carinho, confiança e identificação, tornando cada parceria
+            mais humana, verdadeira e capaz de gerar resultados reais.
+          </p>
+        </div>
+
+        <div class="publi-img-container">
+          <img src="j.jpg" alt="Monisy Kaillany">
+          <div class="mosaic-overlay">
+            Autenticidade • Fé • Conexão
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÉTRICAS -->
+    <section id="metricas" class="animate-on-scroll">
+      <h2 class="section-title">Métricas da Conta</h2>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <h3>+90 mil</h3>
+          <p>Seguidores Fiéis</p>
+        </div>
+        <div class="metric-card">
+          <h3>+190 mil</h3>
+          <p>Interações Mensais</p>
+        </div>
+        <div class="metric-card">
+          <h3>92%</h3>
+          <p>Público Feminino</p>
+        </div>
+        <div class="metric-card">
+          <h3>+200 Mi</h3>
+          <p>Impressões na Conta</p>
+        </div>
+        <div class="metric-card">
+          <h3>+35 Mi</h3>
+          <p>Visualizações</p>
+        </div>
+        <div class="metric-card">
+          <h3>+1 Mi</h3>
+          <p>Contas Alcançadas</p>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <!-- Adicionar este item na lista da <nav class="nav-links"> no Header -->
+
+
+<!-- SEÇÃO GRANDES MARCAS (Inserir no <main>) -->
+<section id="marcas" class="animate-on-scroll">
+  <h2 class="section-title">Grandes Marcas <br><span class="subtitle-marcas">que estão comigo...</span></h2>
+  
+  <div class="brands-grid">
+    <div class="brand-item brand-chikas">
+      <span>CHIKAS</span>
+    </div>
+    <div class="brand-item brand-brota">
+      <span>brota<br><small>PROFISSIONAL</small></span>
+    </div>
+    <div class="brand-item brand-tutanat">
+      <span>TUTANAT<br><small>PROFISSIONAL</small></span>
+    </div>
+    <div class="brand-item brand-tradicao">
+      <div class="tradicao-inner">
+        <small>TRADIÇÃO MÓVEIS</small>
+        <strong>T</strong>
+      </div>
+    </div>
+    <div class="brand-item brand-quero">
+      <span>quero<br><strong>colchão</strong></span>
+    </div>
+  </div>
+
+  <p class="next-brand-call">A PRÓXIMA É A SUA!</p>
+</section>
+    <!-- SERVIÇOS -->
+<section id="servicos" class="animate-on-scroll">
+  <h2 class="section-title">Serviços e Valores</h2>
+  
+  <div class="services-grid">
+    <!-- PROVADOR PRESENCIAL EM LOJA -->
+    <article class="service-card">
+      <div class="service-img-wrapper">
+        <img src="j.jpg" class="service-img" alt="Provador Presencial em Loja">
+      </div>
+      <div class="service-body">
+        <h3>Provador Presencial em Loja</h3>
+        <ul>
+          <li>Provador 4 Looks: <strong>R$ 350,00</strong></li>
+          <li>Provador 6 Looks: <strong>R$ 400,00</strong></li>
+          <li>Provador 8 Looks: <strong>R$ 450,00</strong></li>
+        </ul>
+        <a href="https://wa.me/5581991804782?text=Olá,%20tenho%20interesse%20no%20Provador%20Presencial%20em%20Loja" class="btn-whatsapp" target="_blank">
+          <i class="fab fa-whatsapp"></i> Agendar Presencial
+        </a>
+      </div>
+    </article>
+
+    <!-- PROVADOR EM CASA -->
+    <article class="service-card">
+      <div class="service-img-wrapper">
+        <img src="jj.jpg" class="service-img" alt="Provador em Casa">
+      </div>
+      <div class="service-body">
+        <h3>Provador em Casa</h3>
+        <ul>
+          <li>Provador 4 Looks: <strong>R$ 250,00</strong></li>
+          <li>Provador 6 Looks: <strong>R$ 300,00</strong></li>
+          <li>Provador 8 Looks: <strong>R$ 350,00</strong></li>
+        </ul>
+        <a href="https://wa.me/5581991804782?text=Olá,%20tenho%20interesse%20no%20Provador%20em%20Casa" class="btn-whatsapp" target="_blank">
+          <i class="fab fa-whatsapp"></i> Agendar em Casa
+        </a>
+      </div>
+    </article>
+
+    <!-- DIVULGAÇÃO MENSUAL -->
+    <article class="service-card">
+      <div class="service-img-wrapper">
+        <img src="jjj.jpg" class="service-img" alt="Divulgação Mensal">
+      </div>
+      <div class="service-body">
+        <h3>Divulgação Mensal <small>(Não é presencial)</small></h3>
+        <ul>
+          <li>1x por Semana: <strong>R$ 600,00</strong></li>
+          <li>2x por Semana: <strong>R$ 1.150,00</strong></li>
+        </ul>
+        <a href="https://wa.me/5581991804782?text=Olá,%20tenho%20interesse%20na%20Divulgação%20Mensal" class="btn-whatsapp" target="_blank">
+          <i class="fab fa-whatsapp"></i> Plano Mensal
+        </a>
+      </div>
+    </article>
+
+    <!-- DIVULGAÇÕES & STORIES -->
+    <article class="service-card">
+      <div class="service-img-wrapper">
+        <img src="j.jpg" class="service-img" alt="Divulgação e Story">
+      </div>
+      <div class="service-body">
+        <h3>Divulgação Story</h3>
+        <ul>
+          <li>1 Story: <strong>R$ 160,00</strong></li>
+          <li>3 Stories: <strong>R$ 350,00</strong></li>
+        </ul>
+        <h3 class="service-subheading">Divulgação Presencial em Loja</h3>
+        <ul>
+          <li>4 Stories: <strong>R$ 400,00</strong></li>
+          <li>8 Stories: <strong>R$ 550,00</strong></li>
+        </ul>
+        <a href="https://wa.me/5581991804782?text=Olá,%20tenho%20interesse%20em%20Divulgação/Story" class="btn-whatsapp" target="_blank">
+          <i class="fab fa-whatsapp"></i> Solicitar Stories
+        </a>
+      </div>
+    </article>
+
+    <!-- REELS, CARROSSEL E OUTROS FORMATOS -->
+    <article class="service-card">
+      <div class="service-img-wrapper">
+        <img src="jj.jpg" class="service-img" alt="Formatos Especiais">
+      </div>
+      <div class="service-body">
+        <h3>Formatos Especiais</h3>
+        <ul>
+          <li>Reels Criativo: <strong>R$ 500,00</strong><br><small class="obs-text">(O Reels só é feito contratando o serviço de divulgação também)</small></li>
+          <li>Carrossel de Fotos: <strong>R$ 250,00</strong></li>
+          <li>Divulgação (1 Arte): <strong>R$ 70,00</strong></li>
+          <li>Divulgação de Recebidos: <strong>R$ 85,00</strong></li>
+        </ul>
+        <a href="https://wa.me/5581991804782?text=Olá,%20tenho%20interesse%20nos%20Formatos%20Especiais" class="btn-whatsapp" target="_blank">
+          <i class="fab fa-whatsapp"></i> Solicitar Formato
+        </a>
+      </div>
+    </article>
+  </div>
+
+  <!-- FORMAS DE PAGAMENTO -->
+  <div class="payment-methods">
+    <h4>Formas de Pagamento Aceitas:</h4>
+    <div class="payment-badges">
+      <span class="pay-badge"><i class="fas fa-qrcode"></i> Pix</span>
+      <span class="pay-badge"><i class="fas fa-credit-card"></i> Cartão</span>
+      <span class="pay-badge"><i class="fas fa-money-bill-wave"></i> Espécie</span>
+    </div>
+  </div>
+</section>
+    <!-- PUBLI KIDS -->
+    <section id="publikids" class="animate-on-scroll">
+      <h2 class="section-title">Publi Kids com Mallu</h2>
+
+      <div class="about-container">
+        <div class="about-text">
+          <p>
+            Quando escolho algo para a Mallu, penso sempre na qualidade, no conforto,
+            na segurança e em tudo o que realmente faz sentido para a nossa rotina.
+            Cada detalhe é importante, porque acredito que as melhores experiências
+            são aquelas que unem carinho, confiança e momentos especiais em família.
+          </p>
+
+          <br>
+
+          <p>
+            É exatamente isso que transmitimos em cada conteúdo: autenticidade,
+            amor e a magia que só uma criança pode levar para as pessoas. Tudo é
+            apresentado de forma leve, espontânea e verdadeira, criando uma conexão
+            natural entre a marca, a nossa família e o público.
+          </p>
+
+          <br>
+
+          <p>
+            Afinal, a Mallu não apenas experimenta produtos. Ela cria histórias,
+            compartilha sorrisos, inspira outras famílias e transforma cada parceria
+            em uma experiência encantadora, gerando identificação, confiança e uma
+            conexão verdadeira com o público.
+          </p>
+
+          <br>
+
+          <a href="https://wa.me/5581991804782?text=Olá,%20tenho%20interesse%20na%20Publi%20Kids%20com%20a%20Mallu"
+             class="btn-whatsapp"
+             target="_blank">
+            Contratar Publi Kids
+          </a>
+        </div>
+
+        <div class="publi-img-container">
+          <img src="8f1e93cf-72bf-4af8-a088-bf68af54505a.jpg" alt="Mallu e Monisy - Publi Kids">
+          <div class="mosaic-overlay">
+            Amor • Criatividade • Conexão em Família
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CHATBOT -->
+  <div id="chat-widget">
+    <button class="chat-btn" onclick="toggleChat()" aria-label="Abrir Chatbot">
+      <i class="fas fa-comments"></i>
+    </button>
+    <div class="chat-box" id="chatBox">
+      <div class="chat-header">
+        <span>Assistente da Monisy</span>
+        <span style="cursor:pointer;" onclick="toggleChat()">✕</span>
+      </div>
+      <div class="chat-logs" id="chatLogs">
+        <div class="chat-msg bot">Olá! Sou o assistente virtual da Monisy. Como posso te ajudar hoje?</div>
+      </div>
+      <div class="chat-options">
+        <button class="chat-opt-btn" onclick="botReply('valores')">Valores</button>
+        <button class="chat-opt-btn" onclick="botReply('pagamento')">Pagamento</button>
+        <button class="chat-opt-btn" onclick="botReply('contato')">Contato Direct/Whats</button>
+      </div>
+    </div>
+  </div>
+
+
+  <section id="casal" class="animate-on-scroll">
+
+    <h2 class="section-title">Publicidade em Casal</h2>
+
+    <div class="about-container">
+
+        <div class="about-text">
+
+            <p>
+                Vivendo uma fase tão especial da nossa história, também abrimos
+                espaço para campanhas em casal. Acreditamos que compartilhar
+                momentos reais, cheios de cumplicidade, amor e autenticidade,
+                aproxima ainda mais o público e torna cada parceria mais
+                verdadeira.
+            </p>
+
+            <br>
+
+            <p>
+                Além dos conteúdos individuais, produzimos campanhas em casal,
+                apresentando produtos e serviços de forma leve, espontânea e
+                natural. Cada publicidade é desenvolvida para transmitir
+                confiança, conexão e identificação, sempre respeitando a
+                essência da marca e do nosso relacionamento.
+            </p>
+
+            <br>
+
+    
+
+            <br>
+
+            <p>
+                Mais do que divulgar um produto ou serviço, nosso propósito é
+                inspirar, fortalecer a confiança do público e criar conexões
+                genuínas entre marcas e pessoas por meio de conteúdos que
+                refletem amor, parceria e autenticidade.
+            </p>
+
+            <br>
+
+            <a href="https://wa.me/5581991804782?text=Olá,%20tenho%20interesse%20em%20uma%20campanha%20em%20casal"
+               class="btn-whatsapp"
+               target="_blank">
+
+                Solicitar Campanha 
+
+            </a>
+
+        </div>
+
+        <div class="mosaic-item" style="height: 430px;">
+
+            <img src="ac4d6e29-7274-4608-8f64-5eddeb1b7547.jpg"
+                 alt="Monisy Kaillany e seu esposo"
+                 style="object-position:center;">
+
+            
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+<section class="feedback-section">
+  <div class="feedback-header">
+    <h1 class="feedback-title">feedbacks</h1>
+    <p class="feedback-subtitle"><strong>MONISY KAILLANY</strong> | INFLUENCIADORA</p>
+  </div>
+
+  <div class="feedback-grid">
+    <!-- Card 1 (Topo - Destaque Central) -->
+    <div class="feedback-card card-full">
+      <div class="chat-bubble received">
+        boa tarde, monisy!! foi um prazer fazer parte desse momento especial! você é uma maquina, mulher!! seu retorno é incrível. já fui divulgada por influencer de 1 milhão e não tive 1% do que você me proporcionou. você é instrumento de Deus. muito obrigada, até a próxima 💖
+        <span class="chat-time">19:46</span>
+      </div>
+      <div class="chat-bubble sent">
+        Tudo é sobre Eleeeee! 🥹🥺✨🙏🏻🐑
+        <span class="chat-time">19:47 <span class="checks">✓✓</span></span>
+      </div>
+    </div>
+
+    <!-- Card 2 (Esquerda) -->
+    <div class="feedback-card">
+      <div class="chat-bubble received">
+        Oi monise. Passando pra te agradecer, mulher tu é topada mesmo. Kkk
+        <span class="chat-time">21:10</span>
+      </div>
+      <div class="chat-bubble received">
+        Desde a hora que tu postou até agora , tem gente perguntando sobre.
+        <span class="chat-time">21:10</span>
+      </div>
+      <div class="chat-bubble sent">
+        Amémmmmmmm
+        <span class="chat-time">21:11 <span class="checks">✓✓</span></span>
+      </div>
+      <div class="chat-bubble received">
+        E teve pessoas que até já Fechou encomendas dos biscoitos.
+        <span class="chat-time">21:11</span>
+      </div>
+      <div class="chat-bubble sent">
+        Amem 💐🥰
+        <span class="chat-time">21:11 <span class="checks">✓✓</span></span>
+      </div>
+      <div class="chat-bubble sent">
+        Tudo é sobre Ele! 💗🙏🏻
+        <span class="chat-time">21:11 <span class="checks">✓✓</span></span>
+      </div>
+    </div>
+
+    <!-- Card 3 (Direita) -->
+    <div class="feedback-card">
+      <div class="chat-bubble received">
+        Bom dia Monisy, paz!
+      </div>
+      <div class="chat-bubble received">
+        Passando para agradecer a grande ajuda que você me deu, você fez minha divulgação e choveu de clientes 🥹🥹🥹 achei que não eram tão fiéis assim. Mas obrigada, você é luz.
+        <span class="chat-time">01:48</span>
+      </div>
+      <div class="chat-bubble received">
+        E fora clientes ganhei muuuitos seguidores
+        <span class="chat-time">01:48</span>
+      </div>
+      <div class="chat-bubble received">
+        Quase 400$
+        <span class="chat-time">01:48</span>
+      </div>
+      <div class="chat-bubble received">
+        Isso pra mim é motivo de alegria, pois já fechei com outros blogueiros e no máximo foram 150
+        <span class="chat-time">01:49</span>
+      </div>
+      <div class="chat-bubble received">
+        Obrigada 🥺🥺🥺
+        <span class="chat-time">01:49</span>
+      </div>
+    </div>
+
+    <!-- Card 4 (Esquerda Baixo) -->
+    <div class="feedback-card">
+      <div class="chat-bubble received">
+        Tava comentando isso com minha esposa , já fiz parceria com blogueiro com mais de 180 mil seguidores e não tive resultado nem um praticamente, não chegou nem a 100 seguidores kkk e quando fechei parceria com você eu tinha 1300 seguidores e hoje estou com 5500 seguidores , eu digo que foi Deus que colocou você em nossas vidas 👏🏻👏🏻 que Deus continue abençoando sua vida e te dando força pra continuar abençoando outras vidas assim como abençoou a minha através do seu Instagram 🥰
+      </div>
+    </div>
+
+    <!-- Card 5 (Direita Baixo) -->
+    <div class="feedback-card">
+      <div class="chat-bubble received">
+        Monisyyyy<br><br>
+        Quase enlouqueci aqui kkkkkk<br><br>
+        O delivery pegou fogo 🔥 depois que tu postou ...<br><br>
+        Coisa de 25 março ... CORRERIAAAAAA<br><br>
+        O que era pra vender em dois dias , vendeu em 1 dia .<br><br>
+        Acabou embalagens , tudo fechado , pq hoje é domingo... pense no corre ...<br><br>
+        Terei que produzir mais bolos pro delivery amanhã<br><br>
+        Nossa Segunda , não pode ficar sem o delivery 🥹🥹<br>
+        Por que amanhã é dia de curso por aqui.<br>
+        Sempre o delivery abre
+        <span class="chat-time">18:09</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Estrelas de Avaliação -->
+  <div class="stars-rating">
+    ★ ★ ★ ★ ★
+  </div>
+</section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Monisy Kaillany. Todos os direitos reservados.</p>
+    <p>Siga no Instagram: <a href="https://instagram.com/monisy_kaillany" target="_blank">@monisy_kaillany</a></p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    /* LÓGICA DO MENU HAMBÚRGUER (MOBILE) */
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    function closeMenu() {
+      navLinks.classList.remove('active');
+    }
+
+    /* LÓGICA DO SLIDER/CARROSSEL */
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    let autoSlideInterval = setInterval(() => moveSlide(1), 5000);
+
+    function showSlide(index) {
+      if (index >= slides.length) slideIndex = 0;
+      if (index < 0) slideIndex = slides.length - 1;
+
+      slides.forEach(s => s.classList.remove('active'));
+      dots.forEach(d => d.classList.remove('active'));
+
+      slides[slideIndex].classList.add('active');
+      dots[slideIndex].classList.add('active');
+    }
+
+    function moveSlide(step) {
+      slideIndex += step;
+      showSlide(slideIndex);
+      resetAutoSlide();
+    }
+
+    function currentSlide(index) {
+      slideIndex = index;
+      showSlide(slideIndex);
+      resetAutoSlide();
+    }
+
+    function resetAutoSlide() {
+      clearInterval(autoSlideInterval);
+      autoSlideInterval = setInterval(() => moveSlide(1), 5000);
+    }
+
+    /* ANIMAÇÃO AO ROLAR A PÁGINA (SCROLL REVEAL) */
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    animatedElements.forEach(el => observer.observe(el));
+
+    /* LÓGICA DO CHATBOT */
+    function toggleChat() {
+      const chatBox = document.getElementById('chatBox');
+      chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    function botReply(option) {
+      const logs = document.getElementById('chatLogs');
+      let userText = '';
+      let botText = '';
+
+      if (option === 'valores') {
+        userText = 'Quais são os valores?';
+        botText = 'Os valores variam: Provadores a partir de R$ 250, Stories a partir de R$ 160 e Reels Criativo por R$ 500! Confira a seção de valores no site.';
+      } else if (option === 'pagamento') {
+        userText = 'Como funciona o pagamento?';
+        botText = 'Aceitamos PIX, Cartão e Espécie. Provadores presenciais requerem 50% no agendamento. Divulgações e recebidos têm pagamento integral no ato!';
+      } else if (option === 'contato') {
+        userText = 'Como falo diretamente?';
+        botText = 'Você pode mandar mensagem no WhatsApp (81 99180-4782) ou pelo Instagram @monisy_kaillany!';
+      }
+
+      logs.innerHTML += `<div class="chat-msg user">${userText}</div>`;
+      logs.scrollTop = logs.scrollHeight;
+
+      setTimeout(() => {
+        logs.innerHTML += `<div class="chat-msg bot">${botText}</div>`;
+        logs.scrollTop = logs.scrollHeight;
+      }, 400);
+    }
+  </script>
+</body>
+</html>
