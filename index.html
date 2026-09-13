@@ -295,11 +295,11 @@ header.fixed-header {
   color: var(--white);
   margin-bottom: 1rem;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
-  background: rgba(61, 46, 40, 0.5);
+ 
   display: inline-block;
   padding: 0.5rem 1.5rem;
-  border-radius: 8px;
-  border: 1px solid rgba(232, 160, 191, 0.3);
+
+
   backdrop-filter: blur(4px);
 }
 
@@ -343,29 +343,34 @@ header.fixed-header {
   transition: all 0.3s ease;
 }
 
+.btn-whatsapp{
+  background-color: #000000 !important;
+  box-shadow:0px 1px 2px  white !important;
+}
+
 .btn-whatsapp {
-  background-color: var(--primary-brown);
-  color: var(--white);
+  background-color: black;
+  color: black  !important;
   border: 1px solid var(--soft-pink);
   box-shadow: 0 4px 10px rgba(92, 62, 49, 0.3);
 }
 
 .btn-whatsapp:hover {
-  background-color: var(--dark-brown);
-  color: var(--soft-pink);
+  background-color:black;
+  color: black;
   transform: translateY(-2px);
 }
 
 .btn-instagram {
   background-color: transparent;
-  color: var(--white);
-  border: 1.5px solid var(--accent-pink);
+  color:#D4AF37;
+  border: 2px solid #808080;
   margin-top: 13px;
 }
 
 .btn-instagram:hover {
-  background-color: var(--accent-pink);
-  color: var(--dark-brown);
+  background-color: var(--white);
+  color: black;
   transform: translateY(-2px);
 }
 /* BOTÕES DE NAVEGAÇÃO DO SLIDER */
@@ -458,6 +463,186 @@ section {
   box-shadow: 0 4px 15px rgba(92, 62, 49, 0.08);
 }
 
+
+
+
+
+
+
+
+
+
+/* --- SEÇÃO MARCAS --- */
+#marcas {
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+
+.subtitle-marcas {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--primary-brown);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Grid das bolhas (Horizontal no PC, Quebra no Mobile) */
+.brands-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+  max-width: 850px;
+  margin: 2.5rem auto 1.5rem auto;
+}
+
+/* Base dos Círculos */
+.brand-item {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: var(--font-body);
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.brand-item:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Estilos específicos - Milena */
+.brand-milena {
+  background-color: #FFDE00;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  gap: 4px;
+}
+
+.milena-logo {
+  color: #00569B;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3.8rem;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 0.8;
+  margin-top: 5px;
+}
+
+.milena-dots {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.milena-dots .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.milena-dots .red1    { background-color: #D30000; }
+.milena-dots .red2    { background-color: #E51A1A; }
+.milena-dots .orange1 { background-color: #FF5500; }
+.milena-dots .orange2 { background-color: #FF8800; }
+.milena-dots .yellow1 { background-color: #FFAA00; }
+.milena-dots .yellow2 { background-color: #FFCC00; }
+
+/* Estilos específicos - Brota */
+.brand-brota {
+  background-color: #006837;
+  color: #FFFFFF;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.brand-brota small, .brand-tutanat small {
+  font-size: 0.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Estilos específicos - Tutanat */
+.brand-tutanat {
+  background-color: #000000;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.1;
+}
+
+/* Estilos específicos - Tradição */
+.brand-tradicao {
+  background-color: #FFCD00;
+  border: 4px solid #000000;
+  color: #000000;
+  position: relative;
+}
+
+.tradicao-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tradicao-inner small {
+  font-size: 0.45rem;
+  font-weight: 800;
+}
+
+.tradicao-inner strong {
+  font-size: 2rem;
+  font-family: serif;
+}
+
+/* Estilos específicos - Quero Colchão */
+.brand-quero {
+  background-color: #FF8C00;
+  color: #FFFFFF;
+  font-size: 1rem;
+  line-height: 1.1;
+}
+
+.next-brand-call {
+  font-family: var(--font-statement);
+  font-size: 1.3rem;
+  color: var(--dark-brown);
+  margin-top: 2rem;
+  letter-spacing: 1px;
+}
+
+/* Ajuste Responsivo */
+@media (max-width: 600px) {
+  .brands-grid {
+    gap: 1.2rem;
+  }
+  
+  .brand-item {
+    width: 100px;
+    height: 100px;
+  }
+
+  .milena-logo {
+    font-size: 2.8rem;
+  }
+  
+  .milena-dots .dot {
+    width: 5px;
+    height: 5px;
+  }
+}
 /* FOTO VERTICAL (EM PÉ) SEM BARRAS E COM ZOOM */
 .publi-img-container {
   position: relative;
@@ -1367,9 +1552,16 @@ footer a {
   
   <div class="brands-grid">
     <div class="brand-item brand-milena">
-  <span>MILENA</span>
-  <small>móveis e eletros</small>
-</div>
+      <span class="milena-logo">M</span>
+      <div class="milena-dots">
+        <span class="dot red1"></span>
+        <span class="dot red2"></span>
+        <span class="dot orange1"></span>
+        <span class="dot orange2"></span>
+        <span class="dot yellow1"></span>
+        <span class="dot yellow2"></span>
+      </div>
+    </div>
     <div class="brand-item brand-brota">
       <span>brota<br><small>PROFISSIONAL</small></span>
     </div>
@@ -1389,7 +1581,6 @@ footer a {
 
   <p class="next-brand-call">A PRÓXIMA É A SUA!</p>
 </section>
-    <!-- SERVIÇOS -->
 <section id="servicos" class="animate-on-scroll">
   <h2 class="section-title">Serviços e Valores</h2>
   
